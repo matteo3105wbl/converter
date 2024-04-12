@@ -28,11 +28,15 @@ class ChangeExtension extends Command
      */
     public function handle(): void
     {
-        $files = array_diff(scandir('toConvert'), array('..', '.', '.DS_Store'));
+        $files = array_diff(scandir('toConvert'), array('..', '.', '.DS_Store','transformate'));
 
         $bar = $this->output->createProgressBar(count($files));
 
         $bar->start();
+
+        if (!is_dir('toConvert/transformate')) {
+            mkdir('toConvert/transformate');
+        }
 
         foreach ($files as $file) {
             $info = pathinfo($file);
@@ -40,10 +44,10 @@ class ChangeExtension extends Command
 
             if ($ext == 'png') {
                 $image = imagecreatefrompng('toConvert/' . $file);
-                imagejpeg($image, 'toConvert/' . $info['filename'] . '.jpg', 100);
+                imagejpeg($image, 'toConvert/transformate/' . $info['filename'] . '.jpg', 100);
             } else {
                 $image = imagecreatefromjpeg('toConvert/' . $file);
-                imagepng($image, 'toConvert/' . $info['filename'] . '.png', 9);
+                imagepng($image, 'toConvert/transformate/' . $info['filename'] . '.png', 9);
             }
             imagedestroy($image);
             $bar->advance();

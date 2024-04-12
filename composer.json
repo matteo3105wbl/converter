@@ -47,5 +47,11 @@
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
-    "bin": ["converter"]
+    "bin": ["converter"],
+    "repositories": {
+        "converter": {
+            "type": "vcs",
+            "url": "https://github.com/matteo3105wbl/converter"
+        }
+    }
 }
