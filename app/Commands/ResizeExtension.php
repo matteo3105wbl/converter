@@ -61,7 +61,6 @@ class ResizeExtension extends Command
 
             }
 
-
             if( $ratio > 1 && $width == true) {
                 $width = $size_request;
                 $height = $size_request/$ratio;
@@ -87,7 +86,6 @@ class ResizeExtension extends Command
             if ($ext == 'png') {
                 imagepng($dst, 'toConvert/resize/' . $info['filename'] . '.png', 9);
             } else {
-                $image = imagecreatefromjpeg('toConvert/' . $file);
                 imagejpeg($dst, 'toConvert/resize/' . $info['filename'] . '.jpg', 9);
             }
 
