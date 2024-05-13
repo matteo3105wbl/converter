@@ -52,4 +52,6 @@
             "type": "vcs",
             "url": "https://github.com/matteo3105wbl/converter"
     }
+      "minimum-stability": "dev",
+      "prefer-stable": true
 }
