@@ -49,9 +49,7 @@
     "prefer-stable": true,
     "bin": ["converter"],
     "repositories": {
-        "converter": {
             "type": "vcs",
             "url": "https://github.com/matteo3105wbl/converter"
-        }
     }
 }
