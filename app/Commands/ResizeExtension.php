@@ -28,7 +28,7 @@ class ResizeExtension extends Command
      */
     public function handle(): void
     {
-        $files = array_diff(scandir('toConvert'), array('..', '.', '.DS_Store','resize'));
+        $files = array_diff(scandir('Desktop/toConvert'), array('..', '.', '.DS_Store','resize'));
 
         $bar = $this->output->createProgressBar(count($files));
 
@@ -60,7 +60,6 @@ class ResizeExtension extends Command
                 case 'height': $width = false;
 
             }
-
 
             if( $ratio > 1 && $width == true) {
                 $width = $size_request;

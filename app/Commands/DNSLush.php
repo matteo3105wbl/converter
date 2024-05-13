@@ -29,7 +29,7 @@ class DNSLush extends Command
     public function handle(): void
     {
         system('sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder');
-        $this->task('Resizing file', function () {
+        $this->task('DNS is reset!', function () {
             return true;
         });
     }
