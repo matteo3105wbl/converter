@@ -34,8 +34,8 @@ class ResizeExtension extends Command
 
         $bar->start();
 
-        if (!is_dir('toConvert/resize')) {
-            mkdir('toConvert/resize');
+        if (!is_dir('/Users/matteocarbone/Desktop/toConvert/resize')) {
+            mkdir('/Users/matteocarbone/Desktop/toConvert/resize');
         }
 
         $size_request = $this->ask('What size do you want?');
@@ -84,9 +84,9 @@ class ResizeExtension extends Command
             imagecopyresampled($dst,$src,0,0,0,0,$width,$height,$size[0],$size[1]);
 
             if ($ext == 'png') {
-                imagepng($dst, 'toConvert/resize/' . $info['filename'] . '.png', 9);
+                imagepng($dst, '/Users/matteocarbone/Desktop/toConvert/resize/' . $info['filename'] . '.png', 9);
             } else {
-                imagejpeg($dst, 'toConvert/resize/' . $info['filename'] . '.jpg', 9);
+                imagejpeg($dst, '/Users/matteocarbone/Desktop/toConvert/resize/' . $info['filename'] . '.jpg', 9);
             }
 
             imagedestroy($dst);
