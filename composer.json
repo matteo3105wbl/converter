@@ -45,13 +45,11 @@
             "pestphp/pest-plugin": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "bin": ["converter"],
     "repositories": {
             "type": "vcs",
             "url": "https://github.com/matteo3105wbl/converter"
     }
-      "minimum-stability": "dev",
-      "prefer-stable": true
 }
