@@ -61,7 +61,6 @@ class ResizeExtension extends Command
 
             }
 
-
             if( $ratio > 1 && $width == true) {
                 $width = $size_request;
                 $height = $size_request/$ratio;
