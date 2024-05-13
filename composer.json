@@ -1,18 +1,14 @@
 {
-    "name": "laravel-zero/laravel-zero",
-    "description": "The Laravel Zero Framework.",
-    "keywords": ["framework", "laravel", "laravel zero", "console", "cli"],
+    "name": "matteo3105wbl/converter",
+    "description": "Custom converter with different features",
+    "keywords": ["converter", "matteo3105wbl", "console", "cli"],
     "homepage": "https://laravel-zero.com",
     "type": "project",
     "license": "MIT",
-    "support": {
-        "issues": "https://github.com/laravel-zero/laravel-zero/issues",
-        "source": "https://github.com/laravel-zero/laravel-zero"
-    },
     "authors": [
         {
-            "name": "Nuno Maduro",
-            "email": "enunomaduro@gmail.com"
+            "name": "Matteo Weble",
+            "email": "matteo@weble.it"
         }
     ],
     "require": {
@@ -48,8 +44,8 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "bin": ["converter"],
-    "repositories": {
-            "type": "vcs",
-            "url": "https://github.com/matteo3105wbl/converter"
-    }
+    "repositories": [{
+        "type": "github",
+        "url": "https://github.com/akeeba/remotecli"
+    }]
 }
