@@ -43,10 +43,10 @@ class ChangeExtension extends Command
             $ext = $info['extension'];
 
             if ($ext == 'png') {
-                $image = imagecreatefrompng('toConvert/' . $file);
+                $image = imagecreatefrompng('Desktop/converter/toConvert/' . $file);
                 imagejpeg($image, 'Desktop/converter/toConvert/transformate/' . $info['filename'] . '.jpg', 100);
             } else {
-                $image = imagecreatefromjpeg('toConvert/' . $file);
+                $image = imagecreatefromjpeg('Desktop/converter/toConvert/' . $file);
                 imagepng($image, 'Desktop/converter/toConvert/transformate/' . $info['filename'] . '.png', 9);
             }
             imagedestroy($image);
