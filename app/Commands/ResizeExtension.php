@@ -34,8 +34,8 @@ class ResizeExtension extends Command
 
         $bar->start();
 
-        if (!is_dir('Desktop/converter/toConvert/resize')) {
-            mkdir('Desktop/converter/toConvert/resize');
+        if (!is_dir('toConvert/resize')) {
+            mkdir('toConvert/resize');
         }
 
         $size_request = $this->ask('What size do you want?');
@@ -47,9 +47,9 @@ class ResizeExtension extends Command
         foreach ($files as $file) {
             $info = pathinfo($file);
             $ext = $info['extension'];
-            $image = 'Desktop/converter/toConvert/' . $file;
+            $image = 'toConvert/' . $file;
 
-            $size = getimagesize('Desktop/converter/toConvert/' . $file);
+            $size = getimagesize('toConvert/' . $file);
 
             $ratio = $size[0]/$size[1]; // width/height
 
@@ -84,9 +84,10 @@ class ResizeExtension extends Command
             imagecopyresampled($dst,$src,0,0,0,0,$width,$height,$size[0],$size[1]);
 
             if ($ext == 'png') {
-                imagepng($dst, 'Desktop/converter/toConvert/resize/' . $info['filename'] . '.png', 9);
+                imagepng($dst, 'toConvert/resize/' . $info['filename'] . '.png', 9);
             } else {
-                imagejpeg($dst, 'Desktop/converter/toConvert/resize/' . $info['filename'] . '.jpg', 9);
+                $image = imagecreatefromjpeg('toConvert/' . $file);
+                imagejpeg($dst, 'toConvert/resize/' . $info['filename'] . '.jpg', 9);
             }
 
             imagedestroy($dst);

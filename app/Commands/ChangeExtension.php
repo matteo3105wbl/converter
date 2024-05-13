@@ -28,14 +28,14 @@ class ChangeExtension extends Command
      */
     public function handle(): void
     {
-        $files = array_diff(scandir('Desktop/converter/toConvert'), array('..', '.', '.DS_Store','transformate'));
+        $files = array_diff(scandir('toConvert'), array('..', '.', '.DS_Store','transformate'));
 
         $bar = $this->output->createProgressBar(count($files));
 
         $bar->start();
 
-        if (!is_dir('Desktop/converter/toConvert/transformate')) {
-            mkdir('Desktop/converter/toConvert/transformate');
+        if (!is_dir('toConvert/transformate')) {
+            mkdir('toConvert/transformate');
         }
 
         foreach ($files as $file) {
@@ -43,11 +43,11 @@ class ChangeExtension extends Command
             $ext = $info['extension'];
 
             if ($ext == 'png') {
-                $image = imagecreatefrompng('Desktop/converter/toConvert/' . $file);
-                imagejpeg($image, 'Desktop/converter/toConvert/transformate/' . $info['filename'] . '.jpg', 100);
+                $image = imagecreatefrompng('toConvert/' . $file);
+                imagejpeg($image, 'toConvert/transformate/' . $info['filename'] . '.jpg', 100);
             } else {
-                $image = imagecreatefromjpeg('Desktop/converter/toConvert/' . $file);
-                imagepng($image, 'Desktop/converter/toConvert/transformate/' . $info['filename'] . '.png', 9);
+                $image = imagecreatefromjpeg('toConvert/' . $file);
+                imagepng($image, 'toConvert/transformate/' . $info['filename'] . '.png', 9);
             }
             imagedestroy($image);
             $bar->advance();
