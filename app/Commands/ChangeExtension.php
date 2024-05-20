@@ -28,7 +28,7 @@ class ChangeExtension extends Command
      */
     public function handle(): void
     {
-        $files = array_diff(scandir('Desktop/converter/toConvert'), array('..', '.', '.DS_Store','transformate','resize'));
+        $files = array_diff(scandir('Desktop/converter/toConvert'), array('..', '.', '.DS_Store','transformate','resize','video_compressor'));
 
         $bar = $this->output->createProgressBar(count($files));
 

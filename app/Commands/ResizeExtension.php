@@ -28,7 +28,7 @@ class ResizeExtension extends Command
      */
     public function handle(): void
     {
-        $files = array_diff(scandir('Desktop/converter/toConvert'), array('..', '.', '.DS_Store','resize','transformate'));
+        $files = array_diff(scandir('Desktop/converter/toConvert'), array('..', '.', '.DS_Store','resize','transformate','video_compressor'));
 
         $bar = $this->output->createProgressBar(count($files));
 
